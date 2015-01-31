@@ -97,6 +97,9 @@ So, if you still don't have FAQ section on your site yet, install duoFAQ now and
 
 
 == Changelog ==
+= 1.2 =
+* Style issue fixed
+
 = 1.1 =
 * php 5.2 compatible
 
