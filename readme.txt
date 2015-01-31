@@ -84,11 +84,11 @@ So, if you still don't have FAQ section on your site yet, install duoFAQ now and
 1. From Dashboard > Plugins > Add New > Upload the plugin<br>
 2. Activate the plugin<br>
 
-**How to use**
-1. Use shortcode: [duo_faq]
-2. Use shortcode: [duo_faq category="CATEGORY_ID"]
-3. Use in template or php file: `<?php echo do_shortcode('[duo_faq]'); ?>`
-4. Use as widget from Appearances > Widgets
+**How to use**<br>
+1. Use shortcode: [duo_faq]<br>
+2. Use shortcode: [duo_faq category="CATEGORY_ID"]<br>
+3. Use in template or php file: `<?php echo do_shortcode('[duo_faq]'); ?>`<br>
+4. Use as widget from Appearances > Widgets<br>
 
 
 == Screenshots ==
