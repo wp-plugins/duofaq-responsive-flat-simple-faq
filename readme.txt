@@ -16,7 +16,7 @@ You sell products or services on your website? Then your customers have lots of 
 
 
 
-duoFAQ is a very simple and beautiful but powerful plugin for creating FAQ on your WordPress website. duuoFAQ adds FAQ support to your WordPress site in a way that you will feel like it's one of the native features of WordPress. It integrates with all themes and styles.
+duoFAQ is a very simple and beautiful but powerful plugin for creating FAQ on your WordPress website. duoFAQ adds FAQ support to your WordPress site in a way that you will feel like it's one of the native features of WordPress. It integrates with all themes and styles.
 
 
 
