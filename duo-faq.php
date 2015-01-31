@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: duoFAQ
+Plugin Name: duoFAQ - Responsive, Flat, Simple FAQ
 Plugin URI: http://duogeek.com
 Description: A responsive and lightweight FAQ (Frequently Asked Questions) plugin by duogeek
 Version: 1.0
