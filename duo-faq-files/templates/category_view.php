@@ -1,5 +1,5 @@
 <?php ob_start(); ?>
-<h2><?php echo $title; _e(' on', 'df'); ?> <?php echo $cat->name; ?></h2>
+    <h2> <?php if( trim( $title ) == "" ) echo $cat->name; else { echo $title; _e(' on ', 'df'); echo $cat->name; } ?> </h2>
 <?php
     $args = array(
         'post_type' => 'faq',

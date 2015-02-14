@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: faq, faqs, frequently asked questions, wordpress faq, faq wordpress, faq for wordpress, faq plugin
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.2
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -97,6 +97,10 @@ So, if you still don't have FAQ section on your site yet, install duoFAQ now and
 
 
 == Changelog ==
+= 1.3 =
+* "on" removed when category title is hidden in shortcode
+* Option added
+
 = 1.2 =
 * Style issue fixed
 
