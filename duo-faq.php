@@ -3,7 +3,7 @@
 Plugin Name: duoFAQ - Responsive, Flat, Simple FAQ
 Plugin URI: http://duogeek.com
 Description: A responsive and lightweight FAQ (Frequently Asked Questions) plugin by duogeek
-Version: 1.3
+Version: 1.3.1
 Author: duogeek
 Author URI: http://duogeek.com
 License: GPL v2 or later
@@ -11,7 +11,7 @@ License: GPL v2 or later
 
 if ( ! defined( 'ABSPATH' ) ) wp_die( __( 'Sorry hackers! This is not your place!', 'df' ) );
 
-if( ! defined( 'DUO_PLUGIN_URI' ) ) define( 'DUO_PLUGIN_URI', plugin_dir_url( __FILE__ ) );;
+if( ! defined( 'DUO_PLUGIN_URI' ) ) define( 'DUO_PLUGIN_URI', plugin_dir_url( __FILE__ ) );
 
 require 'duogeek/duogeek-panel.php';
 
