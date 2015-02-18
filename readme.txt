@@ -32,7 +32,7 @@ So, if you still don't have FAQ section on your site yet, install duoFAQ now and
 
 For detailed instruction and video tutorial, please visit the <a href="https://duogeek.com/products/plugins/duofaq-responsive-flat-simple-faq/">plugin page</a>.
 
-For any issues, problem or query, please feel free to <aa href="https://duogeek.com/contact/">contact us</a>.
+For any issues, problem or query, please feel free to <a href="https://duogeek.com/contact/">contact us</a>.
 
 
 
