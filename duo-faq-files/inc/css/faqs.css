@@ -10,7 +10,7 @@
     list-style-type: none;
     margin: 0;
     float: left;
-    margin: 0 10px;
+    margin: 0 10px 10px 0;
 }
 
 .smart_all_accordion ul li:first-child{
@@ -47,11 +47,11 @@
 }
 
 .faq_wrap_all h3{
-    font-size: 18px !important;
     margin-top: 0px !important;
     margin-bottom: 0px !important;
     padding: 10px;
     cursor: pointer;
+    outline: none;
 }
 
 .faq-cat-title{
@@ -63,6 +63,7 @@
     font-size: 12px;
     padding: 8px 10px;
     right: 0;
+    top: 0;
 }
 
 .faq-cat-title span a {
@@ -70,11 +71,10 @@
 }
 
 .ui-accordion-content-active {
-    padding: 10px;
     border: 1px solid #2ebb98;
     margin-top: -1px;
 }
 
-.smart_widget_accordion h3{
-    font-size: 13px !important;
+.smartItemsDetails p{
+    margin: 10px !important;
 }

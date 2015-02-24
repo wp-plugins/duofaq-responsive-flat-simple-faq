@@ -1,5 +1,9 @@
 <?php ob_start(); ?>
-    <h2> <?php if( trim( $title ) == "" ) echo $cat->name; else { echo $title; _e(' on ', 'df'); echo $cat->name; } ?> </h2>
+
+    <?php if( trim( $title ) != "" ) { ?>
+    <h2><?php echo $title; ?></h2>
+    <?php } ?>
+
 <?php
     $args = array(
         'post_type' => 'faq',
