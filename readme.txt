@@ -96,6 +96,8 @@ For any issues, problem or query, please feel free to <a href="https://duogeek.c
 
 == Changelog ==
 = 1.3.6 =
+* Minor fix
+
 = 1.3.5 =
 * Notices fixes
 
