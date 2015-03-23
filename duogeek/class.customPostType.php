@@ -116,9 +116,9 @@ if( ! class_exists( 'customPostType' ) ) {
 		
 			register_taxonomy( $this->custom_tax['tax_name'], $this->custom_post_type['post_type'], $args );
 		}
-
-
-		public function add_custom_meta_boxes( $meta_boxes ) {
+                
+                
+                public function add_custom_meta_boxes( $meta_boxes ) {
 			foreach( $meta_boxes as $meta_box ){
 				add_meta_box(
 					$meta_box['id'],
@@ -139,11 +139,12 @@ if( ! class_exists( 'customPostType' ) ) {
 		public function post_list( $posts, $icon ){
 
 			$html = '';
-			$html .= '<div class="kb_post_list">';
-			$html .= '<ul class="list-unstyled">';
+			$html .= '<div class="kb_highlights_list dg_kb_main">';
+			$html .= '<ul>';
 			foreach( $posts as $post ){
 				$html .= '<li>';
-				$html .= '<div><i class="fa '. $icon .'"></i><a href="' . get_permalink( $post->ID ) . '">' . $post->post_title . '</a></div>';
+				// $html .= '<div><i class="fa '. $icon .'"></i><a href="' . get_permalink( $post->ID ) . '">' . $post->post_title . '</a></div>';
+				$html .= '<a href="' . get_permalink( $post->ID ) . '">' . $post->post_title . '</a>';				
 				$html .= $this->get_meta_for_kb( $post->ID );
 				$html .= '</li>';
 			}
@@ -165,9 +166,9 @@ if( ! class_exists( 'customPostType' ) ) {
 			if( ! isset( $kb_unhelp ) || $kb_unhelp == '' ) $kb_unhelp = 0;
 
 			$html .= '<div class="kb_meta_list">';
-			$html .= '<span><i class="fa fa-eye"></i> ' . $kb_count . '</span>';
-			$html .= ' <span><i class="fa fa-thumbs-up"></i> ' . $kb_help . '</span>';
-			$html .= ' <span><i class="fa fa-thumbs-down"></i> ' . $kb_unhelp . '</span>';
+			$html .= '<span class="kb_high_eye"><i class="fa fa-eye"></i> ' . $kb_count . '</span>';
+			$html .= ' <span class="kb_happy_thumb"><i class="fa fa-thumbs-up"></i> ' . $kb_help . '</span>';
+			$html .= ' <span class="kb_sad_thumb"><i class="fa fa-thumbs-down"></i> ' . $kb_unhelp . '</span>';
 			$html .= '</div>';
 
 			return $html;
@@ -177,17 +178,20 @@ if( ! class_exists( 'customPostType' ) ) {
 
 			$html = '';
 			$html .= '<div class="kb_post_list">';
-			$html .= '<ul class="list-unstyled">';
+			// $html .= '<ul>';
+			$html .= '';
 			$i = 0;
 			foreach( $taxes as $tax ){
 				if( isset( $limit ) && $limit > 0 )
 					if( ++$i > $limit )
 						break;
-				$html .= '<li>';
-				$html .= '<div><i class="fa '. $icon .'"></i><a href="' . get_term_link( $tax ) . '">' . $tax->name . ' (' . $tax->count . ')</a></div>';
-				$html .= '</li>';
+				// $html .= '<li>';
+				// $html .= '<div><i class="fa '. $icon .'"></i><a href="' . get_term_link( $tax ) . '">' . $tax->name . ' (' . $tax->count . ')</a></div>';
+				$html .= '<a href="' . get_term_link( $tax ) . '"><div class="kb_categories"><i class="fa fa-camera-retro fa-5x fa-inverse"></i><p>' . $tax->name . ' (' . $tax->count . ')</p></div></a>';
+				// $html .= '</li>';
 			}
-			$html .= '</ul>';
+			// $html .= '</ul>';
+			$html .= '</div>';
 			$html .= '';
 
 			return $html;

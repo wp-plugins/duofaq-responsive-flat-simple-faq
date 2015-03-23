@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: faq, faqs, frequently asked questions, wordpress faq, faq wordpress, faq for wordpress, faq plugin
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.3.6
+Stable tag: 1.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,8 +95,12 @@ For any issues, problem or query, please feel free to <a href="https://duogeek.c
 
 
 == Changelog ==
+= 1.3.7 =
+* Constants added to provide more flexibility
+* Multiple categories can be grouped like [duo_faq category="2,5"]
+
 = 1.3.6 =
-* Minor fix
+* Minor Fixes
 
 = 1.3.5 =
 * Notices fixes

@@ -11,6 +11,7 @@ if( ! defined( 'DUO_MENU_POSITION' ) ) define( 'DUO_MENU_POSITION', '38' );
 if( ! defined( 'DUO_PANEL_SLUG' ) ) define( 'DUO_PANEL_SLUG', 'duogeek-panel' );
 if( ! defined( 'DUO_HELP_SLUG' ) ) define( 'DUO_HELP_SLUG', 'duogeek-panel-help' );
 if( ! defined( 'DUO_VERSION' ) ) define( 'DUO_VERSION', '1.1' );
+if( ! defined( 'DUO_SETTINGS_PAGE' ) ) define( 'DUO_SETTINGS_PAGE', 'admin.php?page=duogeek-panel' );
 
 
 if( ! class_exists( 'DuoGeekPlugins' ) ){

@@ -3,7 +3,7 @@
 Plugin Name: duoFAQ - Responsive, Flat, Simple FAQ
 Plugin URI: http://duogeek.com
 Description: A responsive and lightweight FAQ (Frequently Asked Questions) plugin by duogeek
-Version: 1.3.6
+Version: 1.3.7
 Author: duogeek
 Author URI: http://duogeek.com
 License: GPL v2 or later
@@ -25,6 +25,7 @@ if( ! defined( 'DF_ADDONS_DIR' ) ) define( 'DF_ADDONS_DIR', DF_FILES_DIR . '/add
 if( ! defined( 'DF_INCLUDES_DIR' ) ) define( 'DF_INCLUDES_DIR', DF_FILES_DIR . '/includes' );
 
 if( ! defined( 'DUO_FAQ_MENU_POSITION' ) ) define( 'DUO_FAQ_MENU_POSITION', '37' );
+if( ! defined( 'FAQ_POST_TYPE_REWRITE_SLUG' ) ) define( 'FAQ_POST_TYPE_REWRITE_SLUG', 'faq' );
 
 $jquery_themes = apply_filters( 'df_jqueryui_themes', array( "UI lightness", "UI darkness", "Smoothness", "Start", "Redmond", "Sunny", "Overcast", "Le Frog", "Flick", "Pepper Grinder", "Eggplant", "Dark Hive", "Cupertino", "South Street", "Blitzer", "Humanity", "Hot Sneaks", "Excite Bike", "Vader", "Dot Luv", "Mint Choc", "Black Tie", "Trontastic", "Swanky Purse" ) );
 
@@ -64,7 +65,7 @@ if( ! class_exists( 'DuoFAQ' ) ) {
                 'not_found'          => __( 'No Questions found.', 'df' ),
                 'not_found_in_trash' => __( 'No Questions found in Trash.', 'df' ),
                 'supports'			 => apply_filters( 'faq_post_type_supports', array( 'title', 'editor', 'author', 'excerpt' ) ),
-                'rewrite'			 => apply_filters( 'faq_post_type_rewrite_term', 'faq' )
+                'rewrite'			 => FAQ_POST_TYPE_REWRITE_SLUG
             );
 
             parent::__construct( $this->post_type );
@@ -104,7 +105,7 @@ if( ! class_exists( 'DuoFAQ' ) ) {
         public function faq_plugin_redirect() {
             if ( get_option( 'faq_plugin_do_activation_redirect', false ) ) {
                 delete_option( 'faq_plugin_do_activation_redirect' );
-                wp_redirect( admin_url( 'admin.php?page=duofaq-settings' ) );
+                wp_redirect( admin_url( DUO_SETTINGS_PAGE ) );
             }
         }
 
@@ -306,8 +307,19 @@ if( ! class_exists( 'DuoFAQ' ) ) {
 
             if($category != '')
             {
-                $cat = get_term( $category, 'faq_categories' );
-                include DF_FILES_DIR . '/templates/category_view.php';
+                if( strpos( $category, "," ) > 0 ){
+                    $cats = explode( ',', $category );
+                    $cats = array_map( 'trim', $cats );
+                    $cat = array();
+                    foreach( $cats as $v ){
+                        $term = get_term( $v, 'faq_categories' );
+                        array_push( $cat, $term );
+                    }
+                    include DF_FILES_DIR . '/templates/all_view.php';
+                }else{
+                    $cat = get_term( $category, 'faq_categories' );
+                    include DF_FILES_DIR . '/templates/category_view.php';
+                }
             }
             else
             {
@@ -491,9 +503,9 @@ if( ! class_exists( 'DuoFAQ' ) ) {
                     array(
                         'source'			=> __( 'Duo FAQ PLugin', 'sn' ),
                         'code'              => '[duo_faq]',
-                        'example'           => '[duo_faq category="CATEGORY ID" title="ANY TITLE"]',
+                        'example'           => '[duo_faq category="CATEGORY ID" title="ANY TITLE"], [duo_faq category="CATEGORY ID 1, CATEGORY ID 2" title="ANY TITLE"]',
                         'default'           => 'category = all, title = "Frequently Asked Questions"',
-                        'desc'              => __( 'This shortcode will show the FAQ items. If you provide category ID, then only FAQs from that category will be shown. Otherwise all FAQs will be shown.' , 'sn' )
+                        'desc'              => __( 'This shortcode will show the FAQ items. If you provide category ID, then only FAQs from that category will be shown. Otherwise all FAQs will be shown. To show some categories (not all) use like [duo_faq category="23, 44, 35" title="ANY TITLE"]' , 'sn' )
                     ),
                 )
             );
