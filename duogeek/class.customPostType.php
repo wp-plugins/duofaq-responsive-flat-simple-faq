@@ -136,66 +136,6 @@ if( ! class_exists( 'customPostType' ) ) {
 			return get_terms( $taxonomies, $args );
 		}
 
-		public function post_list( $posts, $icon ){
-
-			$html = '';
-			$html .= '<div class="kb_highlights_list dg_kb_main">';
-			$html .= '<ul>';
-			foreach( $posts as $post ){
-				$html .= '<li>';
-				// $html .= '<div><i class="fa '. $icon .'"></i><a href="' . get_permalink( $post->ID ) . '">' . $post->post_title . '</a></div>';
-				$html .= '<a href="' . get_permalink( $post->ID ) . '">' . $post->post_title . '</a>';				
-				$html .= $this->get_meta_for_kb( $post->ID );
-				$html .= '</li>';
-			}
-			$html .= '</ul>';
-			$html .= '</div>';
-
-			return $html;
-		}
-
-		public function get_meta_for_kb( $post_id ) {
-
-			$html = '';
-			$kb_help = get_post_meta( $post_id, 'kb_help', true );
-			$kb_unhelp = get_post_meta( $post_id, 'kb_unhelp', true );
-			$kb_count = get_post_meta( $post_id, 'kb_count', true );
-
-			if( ! isset( $kb_count ) ) $kb_count = 0;
-			if( ! isset( $kb_help ) || $kb_help == '' ) $kb_help = 0;
-			if( ! isset( $kb_unhelp ) || $kb_unhelp == '' ) $kb_unhelp = 0;
-
-			$html .= '<div class="kb_meta_list">';
-			$html .= '<span class="kb_high_eye"><i class="fa fa-eye"></i> ' . $kb_count . '</span>';
-			$html .= ' <span class="kb_happy_thumb"><i class="fa fa-thumbs-up"></i> ' . $kb_help . '</span>';
-			$html .= ' <span class="kb_sad_thumb"><i class="fa fa-thumbs-down"></i> ' . $kb_unhelp . '</span>';
-			$html .= '</div>';
-
-			return $html;
-		}
-
-		public function tax_list( $taxes, $icon, $limit ){
-
-			$html = '';
-			$html .= '<div class="kb_post_list">';
-			// $html .= '<ul>';
-			$html .= '';
-			$i = 0;
-			foreach( $taxes as $tax ){
-				if( isset( $limit ) && $limit > 0 )
-					if( ++$i > $limit )
-						break;
-				// $html .= '<li>';
-				// $html .= '<div><i class="fa '. $icon .'"></i><a href="' . get_term_link( $tax ) . '">' . $tax->name . ' (' . $tax->count . ')</a></div>';
-				$html .= '<a href="' . get_term_link( $tax ) . '"><div class="kb_categories"><i class="fa fa-camera-retro fa-5x fa-inverse"></i><p>' . $tax->name . ' (' . $tax->count . ')</p></div></a>';
-				// $html .= '</li>';
-			}
-			// $html .= '</ul>';
-			$html .= '</div>';
-			$html .= '';
-
-			return $html;
-		}
 
 		public function get_tax_list( $taxonomies, $args = array() ){
 			$defaults = array(
