@@ -1,5 +1,5 @@
-<?php ob_start();  ?>
-
+<?php ob_start(); ?>
+<?php //var_dump($cat); ?>
 <h2 id="faq-top"><?php echo $title; ?></h2>
 <div class="smart_all_accordion accod_parent">
     <ul class="faq-labels">
@@ -15,7 +15,16 @@
             'faq_categories' => $item->slug,
             'posts_per_page' => -1
         );
-        $posts = get_posts($args);
+        $posts = array();
+        $temp_posts = get_posts($args);
+        foreach( $temp_posts as $post ){
+            $meta = get_post_meta( $post->ID, 'faq_order_no', true );
+            //var_dump($meta);
+            $post->order_no = $meta;
+            array_push($posts, $post);
+        }
+        usort($posts, array($this, 'cmp_post'));
+        //var_dump($posts);
 ?>
     <div class="faq_wrap_all">
         <h4 class="faq-cat-title" id="<?php echo str_replace(' ', '_', trim($item->slug)) ?>">
