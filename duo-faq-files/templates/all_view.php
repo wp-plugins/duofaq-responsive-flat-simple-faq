@@ -9,7 +9,6 @@
     </ul>
 <?php
     foreach($cat as $item) {
-        
         $args = array(
             'post_type' => 'faq',
             'faq_categories' => $item->slug,
@@ -19,7 +18,6 @@
         $temp_posts = get_posts($args);
         foreach( $temp_posts as $post ){
             $meta = get_post_meta( $post->ID, 'faq_order_no', true );
-            //var_dump($meta);
             $post->order_no = $meta;
             array_push($posts, $post);
         }

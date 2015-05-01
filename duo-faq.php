@@ -3,7 +3,7 @@
 Plugin Name: duoFAQ - Responsive, Flat, Simple FAQ
 Plugin URI: http://duogeek.com
 Description: A responsive and lightweight FAQ (Frequently Asked Questions) plugin by duogeek
-Version: 1.4.0
+Version: 1.4.1
 Author: duogeek
 Author URI: http://duogeek.com
 License: GPL v2 or later
@@ -413,11 +413,19 @@ if( ! class_exists( 'DuoFAQ' ) ) {
         }
 
         public function cmp($a, $b){
-            return (int)$a->order_no - (int)$b->order_no;
+            if( property_exists($a, 'order_no') ) {
+                return (int)$a->order_no - (int)$b->order_no;
+            } else {
+                return;
+            }
         }
 
         public function cmp_post($a, $b){
-            return (int)$a->faq_order_no - (int)$b->faq_order_no;
+            if( property_exists($a, 'faq_order_no') ) {
+                return (int)$a->faq_order_no - (int)$b->faq_order_no;
+            } else {
+                return;
+            }
         }
 
         public function faq_shortcode( $atts ){
@@ -442,15 +450,7 @@ if( ! class_exists( 'DuoFAQ' ) ) {
                     usort($cat, array($this, 'cmp'));
                     include DF_FILES_DIR . '/templates/all_view.php';
                 }else{
-                    $cats = get_term( $category, 'faq_categories' );
-                    $cat = array();
-                    foreach( $cats as $value ){
-                        $id = $value->term_id;
-                        $value->order_no = get_option( "faq_categories_order_$id" );
-                        array_push( $cat, $value );
-                    }
-                    usort($cat, array($this, 'cmp'));
-                    //var_dump($cat);
+                    $cat = get_term( $category, 'faq_categories' );
                     include DF_FILES_DIR . '/templates/category_view.php';
                 }
             }
