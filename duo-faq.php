@@ -3,7 +3,7 @@
 Plugin Name: duoFAQ - Responsive, Flat, Simple FAQ
 Plugin URI: http://duogeek.com
 Description: A responsive and lightweight FAQ (Frequently Asked Questions) plugin by duogeek
-Version: 1.4.1
+Version: 1.4.2
 Author: duogeek
 Author URI: http://duogeek.com
 License: GPL v2 or later
@@ -421,7 +421,7 @@ if( ! class_exists( 'DuoFAQ' ) ) {
         }
 
         public function cmp_post($a, $b){
-            if( property_exists($a, 'faq_order_no') ) {
+            if( property_exists($a, 'order_no') ) {
                 return (int)$a->faq_order_no - (int)$b->faq_order_no;
             } else {
                 return;

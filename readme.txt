@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: faq, faqs, frequently asked questions, wordpress faq, faq wordpress, faq for wordpress, faq plugin
 Requires at least: 3.5
 Tested up to: 4.2
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,7 +26,7 @@ So, if you still don't have FAQ section on your site yet, install duoFAQ now and
 
 For detailed instruction and video tutorial, please visit the <a href="https://duogeek.com/products/plugins/duofaq-responsive-flat-simple-faq/">plugin page</a>.
 
-For any issues, problem or query, please feel free to <a href="https://duogeek.com/contact/">contact us</a>.
+For any issues, problem or query, please feel free to <a href="https://duogeek.com/support/forum/duogeek-products/">contact us for support</a>.
 
 
 
