@@ -3,8 +3,8 @@ Contributors: duogeek
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VZB6MW3L4F526
 Tags: faq, faqs, frequently asked questions, wordpress faq, faq wordpress, faq for wordpress, faq plugin
 Requires at least: 3.5
-Tested up to: 4.2
-Stable tag: 1.4.2
+Tested up to: 4.3
+Stable tag: 1.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -95,6 +95,9 @@ For any issues, problem or query, please feel free to <a href="https://duogeek.c
 
 
 == Changelog ==
+= 1.4.3 =
+* Enhancement
+
 = 1.4.1 =
 * Fixed: Warning in Category Page
 * Fixed: SSL Warning
